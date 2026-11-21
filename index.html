@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>徐俊瑞 (Junrui Xu)</title>
+  <meta name="description" content="徐俊瑞的个人主页 — 中国科学技术大学国家同步辐射实验室硕士生，AI for Science / 大科学装置智能化 / AI Agent">
+  <link rel="icon" type="image/png" href="assets/avatar.png">
+  <style>
+    :root {
+      --text: #1f2933;
+      --text-secondary: #52606d;
+      --text-muted: #7b8794;
+      --link: #0b6bcb;
+      --border: #e4e7eb;
+      --bg: #fdfdfd;
+      --bg-card: #ffffff;
+      --bg-soft: #f5f7fa;
+      --accent: #0b6bcb;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Hero ---------- */
+    .hero { text-align: center; margin-bottom: 36px; }
+    .hero h1 {
+      font-size: 2.3rem;
+      margin: 0 0 12px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 .en-name { color: var(--text-secondary); font-weight: 500; font-size: 1.6rem; margin-left: 10px; }
+    .hero .tagline { margin: 4px 0; color: var(--text-secondary); font-size: 1.02rem; }
+    .hero .badge-row { margin: 16px 0 6px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .hero .badge-row img { height: 20px; border-radius: 3px; }
+    .hero .social-row { margin-top: 10px; font-size: 0.95rem; color: var(--text-secondary); }
+    .hero .social-row a { margin: 0 8px; }
+    .hero nav { margin-top: 14px; font-size: 0.95rem; }
+    .hero nav a { margin: 0 10px; color: var(--text-secondary); }
+    .hero nav a:hover { color: var(--accent); text-decoration: none; }
+    .seeking {
+      display: inline-block; margin-top: 14px; padding: 6px 16px;
+      background: var(--bg-soft); border: 1px solid var(--border); border-radius: 20px;
+      font-size: 0.88rem; color: var(--text-secondary);
+    }
+
+    /* ---------- Sections ---------- */
+    section { margin-top: 44px; }
+    h2 {
+      font-size: 1.45rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      margin: 0 0 18px;
+    }
+    h2 .zh { font-weight: 600; }
+    h2 .en { font-weight: 400; color: var(--text-muted); font-size: 1.05rem; margin-left: 8px; }
+
+    /* ---------- Bio ---------- */
+    .bio { display: flex; gap: 28px; align-items: flex-start; }
+    .bio-text { flex: 1; }
+    .bio-text p { margin: 10px 0; text-align: justify; }
+    .bio-avatar { flex-shrink: 0; width: 190px; }
+    .bio-avatar img {
+      width: 100%; border-radius: 10px; border: 1px solid var(--border);
+      display: block;
+    }
+    .bio-avatar .caption { text-align: center; font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+    .interest-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .interest-tags span {
+      background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px;
+      padding: 3px 12px; font-size: 0.85rem; color: var(--text-secondary);
+    }
+
+    /* ---------- News ---------- */
+    .news-box {
+      border: 1px solid var(--border); border-radius: 10px;
+      background: var(--bg-card);
+      padding: 14px 20px;
+      max-height: 230px; overflow-y: auto;
+    }
+    .news-box ul { margin: 0; padding: 0; list-style: none; }
+    .news-box li { padding: 5px 0; border-bottom: 1px dashed var(--border); }
+    .news-box li:last-child { border-bottom: none; }
+    .news-box .date { color: var(--accent); font-weight: 600; margin-right: 8px; }
+
+    /* ---------- Projects ---------- */
+    .project-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--bg-card);
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .project-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+    .project-card h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .project-card h3 a { color: var(--text); }
+    .project-card h3 .gh-link { font-size: 0.85rem; font-weight: 400; margin-left: 8px; }
+    .project-card .role { color: var(--text-secondary); font-size: 0.92rem; margin: 2px 0 8px; }
+    .project-card p { margin: 6px 0; text-align: justify; }
+    .project-card p.zh-desc { color: var(--text-secondary); }
+    .tag-row { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-row span {
+      background: var(--bg-soft); border-radius: 14px; padding: 2px 10px;
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+
+    /* ---------- Blog list ---------- */
+    .blog-list { border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card); padding: 8px 20px; }
+    .blog-item { padding: 12px 0; border-bottom: 1px dashed var(--border); }
+    .blog-item:last-child { border-bottom: none; }
+    .blog-item .date { color: var(--text-muted); font-size: 0.9rem; margin-right: 10px; }
+    .blog-item a { font-weight: 600; font-size: 1.02rem; }
+    .blog-item .brief { color: var(--text-secondary); font-size: 0.9rem; margin-top: 2px; }
+
+    /* ---------- Education / Experience ---------- */
+    .timeline-row {
+      display: flex; gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .timeline-row:last-child { border-bottom: none; }
+    .timeline-row .time { flex-shrink: 0; width: 150px; color: var(--text-muted); font-size: 0.92rem; padding-top: 2px; }
+    .timeline-row .content { flex: 1; }
+    .timeline-row .content .title { font-weight: 600; }
+    .timeline-row .content .detail { color: var(--text-secondary); font-size: 0.94rem; margin-top: 2px; }
+    .honors-list { margin: 0; padding-left: 20px; }
+    .honors-list li { margin: 6px 0; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 60px; padding-top: 18px;
+      border-top: 1px solid var(--border);
+      text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 720px) {
+      .bio { flex-direction: column-reverse; align-items: center; }
+      .bio-avatar { width: 150px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero h1 .en-name { font-size: 1.2rem; }
+      .timeline-row { flex-direction: column; gap: 2px; }
+      .timeline-row .time { width: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============ Hero ============ -->
+  <header class="hero">
+    <h1>徐俊瑞 <span class="en-name">Junrui Xu</span></h1>
+    <p class="tagline">🎓 硕士研究生一年级 @ 中国科学技术大学 · 国家同步辐射实验室（NSRL）</p>
+    <p class="tagline">🤖 AI for Science &amp; 大科学装置智能化 &nbsp;|&nbsp; 🛠️ Agent Builder</p>
+    <p class="tagline">🧸 AI4MS（AI for Materials Science）探索者</p>
+
+    <div class="badge-row">
+      <a href="https://github.com/Mikexujunrui"><img src="https://img.shields.io/github/followers/Mikexujunrui?label=Followers" alt="GitHub Followers"></a>
+      <a href="https://github.com/Mikexujunrui"><img src="https://img.shields.io/github/stars/Mikexujunrui?affiliations=&label=Stars" alt="GitHub Stars"></a>
+    </div>
+
+    <div class="social-row">
+      <a href="mailto:mikexujunrui@mail.ustc.edu.cn">📧 Email</a>
+      <a href="https://github.com/Mikexujunrui">💻 GitHub</a>
+      <a href="blog/2026-11-21-hello.html">✍️ 博客</a>
+    </div>
+
+    <nav>
+      <a href="#bio">简介</a>
+      <a href="#news">动态</a>
+      <a href="#projects">项目</a>
+      <a href="#blog">博客</a>
+      <a href="#education">教育</a>
+      <a href="#experience">经历</a>
+      <a href="#honors">荣誉</a>
+    </nav>
+
+    <div class="seeking">🔍 正在寻找 Agent / AI for Science 方向实习机会（可实习 6 个月以上）</div>
+  </header>
+
+  <!-- ============ Bio ============ -->
+  <section id="bio">
+    <h2><span class="zh">简介</span><span class="en">Biography</span></h2>
+    <div class="bio">
+      <div class="bio-text">
+        <p>
+          你好！我是<strong>徐俊瑞（Junrui Xu）</strong>，中国科学技术大学<strong>国家同步辐射实验室（NSRL，核科学技术学院）</strong>硕士研究生一年级，
+          导师为<strong>张国斌</strong>老师（国家同步辐射实验室）与<strong>钟志诚</strong>老师（人工智能与数据科学学院）。
+          我的研究方向是<strong>大科学装置的智能化改造与 AI 自动化实验</strong>，同时对 <strong>AI for Materials Science（AI4MS）</strong>的落地有浓厚兴趣。
+        </p>
+        <p>
+          我本科毕业于中国科学技术大学<strong>少年班学院（未来技术学院）量子信息科学专业</strong>。本科科研期间，我使用强化学习训练网络来控制自适应光学系统，
+          优化星地量子激光通信链路信噪比，提升约 10 dB，方案通过了真实卫星验收。
+        </p>
+        <p>
+          我从 ChatGPT 出现之初就开始重度使用 AI，热衷构建 Agent：参与<strong>材料计算智能体 MatCreator</strong> 的开发、
+          画布式多智能体平台 <strong>Open Agent World</strong> 的知识库建设，并独立开发了 AI 小说创作智能体 <strong>AnySpark</strong>。
+          我相信下一代个人 Agent 应当能够<strong>跨会话、跨任务、跨设备、跨组织</strong>地完成工作，把人类从"人肉总线"中解放出来。
+        </p>
+        <p>
+          <em>欢迎通过邮件与我交流 Agent、AI4Science 或任何有趣的话题！</em>
+        </p>
+        <div class="interest-tags">
+          <span>AI Agent</span>
+          <span>AI for Science</span>
+          <span>同步辐射 / 大科学装置智能化</span>
+          <span>AI4MS</span>
+          <span>强化学习</span>
+          <span>量子信息</span>
+        </div>
+      </div>
+      <div class="bio-avatar">
+        <img src="assets/avatar.png" alt="徐俊瑞头像">
+        <div class="caption">Junrui Xu @ USTC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ News ============ -->
+  <section id="news">
+    <h2><span class="zh">动态</span><span class="en">News</span></h2>
+    <div class="news-box">
+      <ul>
+        <li><span class="date">[11/2026]</span>个人主页上线 🎉，博客开始记录 Agent 与 AI4Science 的思考。</li>
+        <li><span class="date">[09/2026]</span>入读中国科学技术大学国家同步辐射实验室，开始硕士阶段学习与研究。</li>
+        <li><span class="date">[08/2026]</span>结束在人工智能与数据科学学院 / 苏州国家实验室的科研助理工作。</li>
+        <li><span class="date">[07/2025]</span>加入中国科学技术大学人工智能与数据科学学院 / 苏州国家实验室，任科研助理，聚焦 AI for Science 与材料生成模型。</li>
+        <li><span class="date">[2025]</span>在北京宜信科技短期实习，参与智能客服系统开发（Computer Use + 本地大模型部署）。</li>
+        <li><span class="date">[06/2025]</span>本科毕业于中国科学技术大学量子信息科学专业。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Projects ============ -->
+  <section id="projects">
+    <h2><span class="zh">项目</span><span class="en">Projects</span></h2>
+
+    <div class="project-card">
+      <h3>MatCreator — 材料计算智能体 <a class="gh-link" href="https://github.com/AI4MS/MatCreator">[GitHub]</a></h3>
+      <p class="role">核心开发者 · 负责 Skill（闭源）优化与 Agent Loop 循环设计</p>
+      <p>
+        A materials-computing agent that orchestrates computational-materials workflows
+        (structure generation, property calculation, result analysis) through an agent loop.
+        I designed the agent loop and optimized its skills.
+      </p>
+      <p class="zh-desc">
+        面向材料计算的智能体系统：通过 Agent Loop 编排结构生成、性质计算与结果分析等工作流。
+        我主要负责 Skill 优化与循环设计，并参与与深势科技合作的多量子体系计算项目。
+      </p>
+      <div class="tag-row"><span>Agent Loop</span><span>AI4MS</span><span>材料计算</span></div>
+    </div>
+
+    <div class="project-card">
+      <h3>Open Agent World — 画布式多智能体协作平台 <a class="gh-link" href="https://github.com/theAfish/open-agent-world">[GitHub]</a></h3>
+      <p class="role">贡献者 · 负责知识库构建（实验性项目）</p>
+      <p>
+        An experimental canvas-style platform where multiple agents collaborate visually.
+        I built the knowledge-base module, enabling ingestion and retrieval of non-standardized data.
+      </p>
+      <p class="zh-desc">
+        画布式多智能体协作平台（实验性）：多智能体在画布上可视化协作。
+        我负责知识库构建，实现非标准化数据的入库与查询。
+      </p>
+      <div class="tag-row"><span>Multi-Agent</span><span>知识库</span><span>RAG</span></div>
+    </div>
+
+    <div class="project-card">
+      <h3>AnySpark — 人机对齐驱动的 AI 小说创作智能体 <a class="gh-link" href="https://github.com/Mikexujunrui/AnySpark">[GitHub]</a></h3>
+      <p class="role">独立开发者 · 全栈开发（Vibe Coding 实践）</p>
+      <p>
+        A personal project exploring human-AI alignment for creative writing:
+        mental-model alignment to capture the user's intent, a gacha mechanism to improve passage quality,
+        and a custom canvas workflow that solidifies the writing process.
+      </p>
+      <p class="zh-desc">
+        个人项目：通过心智模型对齐用户心理，用抽卡机制提升写作片段效果，
+        并以自定义画布工作流固化写作流程，全栈独立开发。
+      </p>
+      <div class="tag-row"><span>全栈</span><span>人机对齐</span><span>画布工作流</span></div>
+    </div>
+  </section>
+
+  <!-- ============ Blog ============ -->
+  <section id="blog">
+    <h2><span class="zh">博客</span><span class="en">Blog</span></h2>
+    <div class="blog-list">
+      <div class="blog-item">
+        <span class="date">[11/2026]</span>
+        <a href="blog/2026-11-21-hello.html">你好，世界：为什么我给自己搭了一个个人主页</a>
+        <div class="brief">关于本站的初衷：记录 Agent 实践、AI4Science 折腾与日常思考。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Education ============ -->
+  <section id="education">
+    <h2><span class="zh">教育经历</span><span class="en">Education</span></h2>
+
+    <div class="timeline-row">
+      <div class="time">2026.09 – 至今</div>
+      <div class="content">
+        <div class="title">中国科学技术大学 · 国家同步辐射实验室（核科学技术学院）· 硕士研究生</div>
+        <div class="detail">
+          研究方向：大科学装置相关智能化改造与 AI 自动化实验、AI4MS 落地。<br>
+          指导老师：张国斌 老师（国家同步辐射实验室）、钟志诚 老师（人工智能与数据科学学院）。
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="time">2021.09 – 2025.06</div>
+      <div class="content">
+        <div class="title">中国科学技术大学 · 少年班学院（未来技术学院）· 量子信息科学 · 理学学士</div>
+        <div class="detail">
+          相关课程：量子力学、量子信息技术、概率论与统计学。<br>
+          本科科研：以强化学习训练网络控制自适应光学系统，优化星地量子激光通信链路信噪比（提升约 10 dB），方案通过真实卫星验收。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Experience ============ -->
+  <section id="experience">
+    <h2><span class="zh">科研与工作经历</span><span class="en">Experience</span></h2>
+
+    <div class="timeline-row">
+      <div class="time">2025.07 – 2026.08</div>
+      <div class="content">
+        <div class="title">科研助理 · 中国科学技术大学 人工智能与数据科学学院 / 苏州国家实验室</div>
+        <div class="detail">
+          参与 AI for Science 研究，聚焦材料生成模型；参与材料计算智能体 MatCreator 的开发；
+          参与与深势科技合作的多量子体系计算相关项目。
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="time">2025</div>
+      <div class="content">
+        <div class="title">智能客服系统开发（短期实习）· 北京宜信科技</div>
+        <div class="detail">
+          以 Vibe Coding 方式（Codex / Claude Code）开发智能客服系统：利用 Computer Use 对接淘宝、京东等不开放 API 的封闭客服系统，
+          本地部署 DeepSeek V4.1 Flash（4 × Atlas 300I DUO）配合商品知识库快速应答，平均响应约 22 秒，满足平台 1 分钟内回复的要求。
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="time">2026</div>
+      <div class="content">
+        <div class="title">创业实践 · AI4MS 固态电池新材料探索（质科元科技，筹备）</div>
+        <div class="detail">
+          覆盖可行性调研、BP 与宣传网站制作；联系投资人（元禾资本等）并与 VC 洽谈宣讲；
+          寻找意向合作客户并签订战略合作合同（智邦锂电、赣锋锂业）。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Honors ============ -->
+  <section id="honors">
+    <h2><span class="zh">荣誉与奖项</span><span class="en">Honors &amp; Awards</span></h2>
+    <ul class="honors-list">
+      <li>全国大学生物理学术能力竞赛 一等奖（两次）</li>
+      <li>第 37 届全国中学生物理学术能力竞赛 赛区一等奖</li>
+    </ul>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer>
+    © 2026 徐俊瑞 (Junrui Xu) ·
+    <a href="https://github.com/Mikexujunrui/Mikexujunrui.github.io">Fork / Star on GitHub</a> ·
+    Last updated: 2026-11
+  </footer>
+
+</div>
+</body>
+</html>

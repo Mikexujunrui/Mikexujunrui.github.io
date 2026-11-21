@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你好，世界：为什么我给自己搭了一个个人主页 — 徐俊瑞</title>
+  <meta name="description" content="关于本站的初衷：记录 Agent 实践、AI for Science 折腾与日常思考。">
+  <link rel="icon" type="image/png" href="../assets/avatar.png">
+  <style>
+    :root {
+      --text: #1f2933;
+      --text-secondary: #52606d;
+      --text-muted: #7b8794;
+      --link: #0b6bcb;
+      --border: #e4e7eb;
+      --bg: #fdfdfd;
+      --bg-soft: #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      font-size: 16.5px; line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .back { font-size: 0.92rem; margin-bottom: 28px; }
+    .back a { color: var(--link); text-decoration: none; }
+    .back a:hover { text-decoration: underline; }
+    h1 { font-size: 1.9rem; line-height: 1.4; margin: 0 0 8px; }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; }
+    article p { margin: 14px 0; text-align: justify; }
+    article h2 { font-size: 1.3rem; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+    article blockquote {
+      margin: 18px 0; padding: 12px 18px;
+      background: var(--bg-soft); border-left: 4px solid var(--link);
+      color: var(--text-secondary); border-radius: 0 8px 8px 0;
+    }
+    article code {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 4px; padding: 1px 6px; font-size: 0.88em;
+      font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    }
+    footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--border);
+      text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+    @media (max-width: 600px) { h1 { font-size: 1.5rem; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <p class="back">← <a href="../index.html">回到主页</a></p>
+
+  <h1>你好，世界：为什么我给自己搭了一个个人主页</h1>
+  <p class="meta">2026-11-21 · 徐俊瑞 · 约 3 分钟</p>
+
+  <article>
+    <p>这个站点的第一篇文章，理应回答一个问题：<strong>都 2026 年了，为什么还要手写一个静态个人主页？</strong></p>
+
+    <h2>为什么要有这个主页</h2>
+    <p>
+      过去一年多，我的身份在几个角色之间来回切换：国家同步辐射实验室的研究生、材料计算智能体
+      <a href="https://github.com/AI4MS/MatCreator">MatCreator</a> 的开发者、AI 小说创作智能体
+      <a href="https://github.com/Mikexujunrui/AnySpark">AnySpark</a> 的独立作者，
+      还有 AI4MS 固态电池新材料探索的创业参与者。这些碎片散落在简历、聊天记录和各个仓库的 README 里，没有一个地方能把它们完整地拼起来。
+    </p>
+    <p>
+      于是有了这个页面：一个纯 HTML + CSS 的静态站，托管在 GitHub Pages 上，没有框架、没有构建步骤、没有数据库。
+      打开 <code>index.html</code> 就能看到全部。这种"土法"恰恰是我想要的——它足够简单，简单的东西才维护得动。
+    </p>
+
+    <h2>这里会写什么</h2>
+    <p>大概三类内容：</p>
+    <p>
+      一是 <strong>Agent 实践</strong>。我现在的核心判断是：现有 Agent 体系强烈依赖人类充当"人肉总线"和"人肉端口"，
+      基于 session 的管理范式占用了人类有限的注意力窗口。我感兴趣的是跨会话、跨任务、跨设备、跨组织的个人 Agent
+      该如何工作——Open Agent World 的知识库模块和 AnySpark 的画布工作流，都是这个判断的实验品，踩过的坑会记在这里。
+    </p>
+    <p>
+      二是 <strong>AI for Science 与大科学装置</strong>。同步辐射光源这类大科学装置的智能化改造和 AI 自动化实验，
+      是我研究生阶段的主线课题。这个领域的论文和工程实践之间隔着一道很宽的沟，我希望把沟两边的东西都记一点。
+    </p>
+    <p>三是<strong>日常思考</strong>。关于科研、工具、读书，或者单纯觉得有意思的东西。</p>
+
+    <h2>一个原则</h2>
+    <blockquote>
+      写下来的东西要对未来的自己有用，而不是对当下的情绪有用。
+    </blockquote>
+    <p>
+      所以更新频率可能不高，但每一篇都尽量带着具体的上下文：做了什么、为什么这么做、哪里做错了。
+    </p>
+
+    <p>如果你对 Agent、AI4Science 或者任何奇怪的话题感兴趣，欢迎通过
+      <a href="mailto:mikexujunrui@mail.ustc.edu.cn">邮件</a> 或者
+      <a href="https://github.com/Mikexujunrui">GitHub</a> 找到我。</p>
+  </article>
+
+  <footer>
+    © 2026 徐俊瑞 (Junrui Xu) · <a href="../index.html">个人主页</a>
+  </footer>
+</div>
+</body>
+</html>
