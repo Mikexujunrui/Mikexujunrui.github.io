@@ -7,98 +7,96 @@
   <meta name="description" content="关于本站的初衷：记录 Agent 实践、AI for Science 折腾与日常思考。">
   <link rel="icon" type="image/png" href="../assets/avatar.png">
   <style>
-    :root {
-      --text: #1f2933;
-      --text-secondary: #52606d;
-      --text-muted: #7b8794;
-      --link: #0b6bcb;
-      --border: #e4e7eb;
-      --bg: #fdfdfd;
-      --bg-soft: #f5f7fa;
-    }
-    * { box-sizing: border-box; }
+    /* jemdoc 学术风格，与主页一致 */
+    html { background-color: #eeeeee; }
     body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-      font-size: 16.5px; line-height: 1.85;
-      -webkit-font-smoothing: antialiased;
+      font-family: Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+      color: #000;
+      background-color: #ffffff;
+      text-align: left;
+      margin-top: 30px; margin-bottom: 30px;
+      margin-left: auto; margin-right: auto;
+      padding-left: 50px; padding-right: 50px;
+      padding-top: 10px; padding-bottom: 30px;
+      max-width: 860px;
+      font-size: 16px; line-height: 1.55;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-    .back { font-size: 0.92rem; margin-bottom: 28px; }
-    .back a { color: var(--link); text-decoration: none; }
-    .back a:hover { text-decoration: underline; }
-    h1 { font-size: 1.9rem; line-height: 1.4; margin: 0 0 8px; }
-    .meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; }
-    article p { margin: 14px 0; text-align: justify; }
-    article h2 { font-size: 1.3rem; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-    article blockquote {
-      margin: 18px 0; padding: 12px 18px;
-      background: var(--bg-soft); border-left: 4px solid var(--link);
-      color: var(--text-secondary); border-radius: 0 8px 8px 0;
+    a, a > tt { color: #3670c9; text-decoration: none; }
+    a:hover { border-bottom: 1px gray dotted; }
+    tt { background: #ffffdd; }
+    h1, h2, h3 {
+      color: #527bbd;
+      margin-top: 0.7em; margin-bottom: 0.5em;
+      padding-bottom: 0.2em; line-height: 1.3; padding-top: 0.5em;
+      border-bottom: 1px solid #aaaaaa;
     }
-    article code {
-      background: var(--bg-soft); border: 1px solid var(--border);
-      border-radius: 4px; padding: 1px 6px; font-size: 0.88em;
-      font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+    h1 { font-size: 165%; padding-bottom: 0.3em; }
+    h2 { font-size: 125%; padding-top: 0.8em; }
+    p { margin-top: 0; margin-bottom: 0.8em; }
+    blockquote {
+      margin: 1em 0; padding: 10px 18px;
+      background: #f6f8fa; border-left: 4px solid #527bbd;
+      color: #333; border-radius: 0 8px 8px 0;
     }
-    footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--border);
-      text-align: center; color: var(--text-muted); font-size: 0.85rem; }
-    @media (max-width: 600px) { h1 { font-size: 1.5rem; } }
+    code {
+      background: #ffffdd; padding: 1px 5px; border-radius: 3px;
+      font-family: monaco, monospace; font-size: 88%;
+    }
+    .meta { color: #808080; font-size: small; margin-top: -10px; }
+    .back { font-size: small; margin-bottom: 6px; }
+    div#footer {
+      font-size: small; border-top: 1px solid #c0c0c0;
+      padding-top: 0.1em; margin-top: 4.0em; color: #c0c0c0;
+    }
+    div#footer a { color: #80a0b0; }
+    @media (max-width: 720px) {
+      body { padding-left: 16px; padding-right: 16px; margin-top: 10px; }
+      h1 { font-size: 135%; }
+    }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <p class="back">← <a href="../index.html">回到主页</a></p>
-
+  <p class="back">← <a href="../index.html">Back / 返回主页</a></p>
   <h1>你好，世界：为什么我给自己搭了一个个人主页</h1>
-  <p class="meta">2026-11-21 · 徐俊瑞 · 约 3 分钟</p>
+  <p class="meta">2026-11-21 · 徐俊瑞 (Junrui Xu) · 约 3 分钟</p>
 
-  <article>
-    <p>这个站点的第一篇文章，理应回答一个问题：<strong>都 2026 年了，为什么还要手写一个静态个人主页？</strong></p>
+  <p>这个站点的第一篇文章，理应回答一个问题：<strong>都 2026 年了，为什么还要手写一个静态个人主页？</strong></p>
 
-    <h2>为什么要有这个主页</h2>
-    <p>
-      过去一年多，我的身份在几个角色之间来回切换：国家同步辐射实验室的研究生、材料计算智能体
-      <a href="https://github.com/AI4MS/MatCreator">MatCreator</a> 的开发者、AI 小说创作智能体
-      <a href="https://github.com/Mikexujunrui/AnySpark">AnySpark</a> 的独立作者，
-      还有 AI4MS 固态电池新材料探索的创业参与者。这些碎片散落在简历、聊天记录和各个仓库的 README 里，没有一个地方能把它们完整地拼起来。
-    </p>
-    <p>
-      于是有了这个页面：一个纯 HTML + CSS 的静态站，托管在 GitHub Pages 上，没有框架、没有构建步骤、没有数据库。
-      打开 <code>index.html</code> 就能看到全部。这种"土法"恰恰是我想要的——它足够简单，简单的东西才维护得动。
-    </p>
+  <h2>为什么要有这个主页</h2>
+  <p>
+    过去一年多，我的身份在几个角色之间来回切换：国家同步辐射实验室的研究生、材料计算智能体
+    <a href="https://github.com/AI4MS/MatCreator" target="_blank">MatCreator</a> 的开发者、AI 小说创作智能体
+    <a href="https://github.com/Mikexujunrui/AnySpark" target="_blank">AnySpark</a> 的独立作者，
+    还有 AI4MS 固态电池新材料探索的创业参与者。这些碎片散落在简历、聊天记录和各个仓库的 README 里，没有一个地方能把它们完整地拼起来。
+  </p>
+  <p>
+    于是有了这个页面：一个纯 HTML + CSS 的静态站，托管在 GitHub Pages 上，没有框架、没有构建步骤、没有数据库。
+    打开 <code>index.html</code> 就能看到全部。这种"土法"恰恰是我想要的——它足够简单，简单的东西才维护得动。
+  </p>
 
-    <h2>这里会写什么</h2>
-    <p>大概三类内容：</p>
-    <p>
-      一是 <strong>Agent 实践</strong>。我现在的核心判断是：现有 Agent 体系强烈依赖人类充当"人肉总线"和"人肉端口"，
-      基于 session 的管理范式占用了人类有限的注意力窗口。我感兴趣的是跨会话、跨任务、跨设备、跨组织的个人 Agent
-      该如何工作——Open Agent World 的知识库模块和 AnySpark 的画布工作流，都是这个判断的实验品，踩过的坑会记在这里。
-    </p>
-    <p>
-      二是 <strong>AI for Science 与大科学装置</strong>。同步辐射光源这类大科学装置的智能化改造和 AI 自动化实验，
-      是我研究生阶段的主线课题。这个领域的论文和工程实践之间隔着一道很宽的沟，我希望把沟两边的东西都记一点。
-    </p>
-    <p>三是<strong>日常思考</strong>。关于科研、工具、读书，或者单纯觉得有意思的东西。</p>
+  <h2>这里会写什么</h2>
+  <p>大概三类内容：</p>
+  <p>
+    一是 <strong>Agent 实践</strong>。我现在的核心判断是：现有 Agent 体系强烈依赖人类充当"人肉总线"和"人肉端口"，
+    基于 session 的管理范式占用了人类有限的注意力窗口。我感兴趣的是跨会话、跨任务、跨设备、跨组织的个人 Agent
+    该如何工作——Open Agent World 的知识库模块和 AnySpark 的画布工作流，都是这个判断的实验品，踩过的坑会记在这里。
+  </p>
+  <p>
+    二是 <strong>AI for Science 与大科学装置</strong>。同步辐射光源这类大科学装置的智能化改造和 AI 自动化实验，
+    是我研究生阶段的主线课题。这个领域的论文和工程实践之间隔着一道很宽的沟，我希望把沟两边的东西都记一点。
+  </p>
+  <p>三是<strong>日常思考</strong>。关于科研、工具、读书，或者单纯觉得有意思的东西。</p>
 
-    <h2>一个原则</h2>
-    <blockquote>
-      写下来的东西要对未来的自己有用，而不是对当下的情绪有用。
-    </blockquote>
-    <p>
-      所以更新频率可能不高，但每一篇都尽量带着具体的上下文：做了什么、为什么这么做、哪里做错了。
-    </p>
+  <h2>一个原则</h2>
+  <blockquote>写下来的东西要对未来的自己有用，而不是对当下的情绪有用。</blockquote>
+  <p>所以更新频率可能不高，但每一篇都尽量带着具体的上下文：做了什么、为什么这么做、哪里做错了。</p>
 
-    <p>如果你对 Agent、AI4Science 或者任何奇怪的话题感兴趣，欢迎通过
-      <a href="mailto:mikexujunrui@mail.ustc.edu.cn">邮件</a> 或者
-      <a href="https://github.com/Mikexujunrui">GitHub</a> 找到我。</p>
-  </article>
+  <p>如果你对 Agent、AI for Science 或者任何奇怪的话题感兴趣，欢迎通过
+    <a href="mailto:mikexujunrui@mail.ustc.edu.cn">邮件</a> 或者
+    <a href="https://github.com/Mikexujunrui" target="_blank">GitHub</a> 找到我。</p>
 
-  <footer>
+  <div id="footer">
     © 2026 徐俊瑞 (Junrui Xu) · <a href="../index.html">个人主页</a>
-  </footer>
-</div>
+  </div>
 </body>
 </html>
