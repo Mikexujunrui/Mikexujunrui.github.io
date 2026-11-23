@@ -36,11 +36,41 @@
       border-bottom: 1px solid #aaaaaa;
     }
     h1 { font-size: 165%; padding-bottom: 0.3em; }
-    h2 { padding-top: 0.8em; font-size: 125%; }
+    h2 {
+      padding-top: 0.8em; font-size: 125%;
+      margin-top: 2.2em;
+      border-left: 5px solid #527bbd;
+      border-bottom-color: #dddddd;
+      padding-left: 12px;
+    }
     h3 { font-size: 110%; border-bottom: none; margin-bottom: 0.3em; }
 
-    p { margin-top: 0.0em; margin-bottom: 0.8em; padding: 0; line-height: 1.45; }
+    p { margin-top: 0.0em; margin-bottom: 0.8em; padding: 0; line-height: 1.6; }
     strong { font-weight: bold; }
+
+    /* 区块差异化：动态面板 / 博客卡片 / 项目标题条 */
+    .panel {
+      background: #f6f8fa;
+      border: 1px solid #e3e8ee;
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+    .blog-card {
+      background: #f8f9fb;
+      border: 1px solid #e8ecf1;
+      border-left: 3px solid #c9d6e8;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      transition: border-color .15s, background .15s;
+    }
+    .blog-card:hover { border-left-color: #527bbd; background: #f0f5fb; }
+    .blog-card p { margin-bottom: 0; }
+    h3.work-title {
+      background: #eef2f8;
+      border-radius: 4px;
+      padding: 7px 12px;
+    }
 
     div#toptitle { padding-bottom: 0.2em; margin-bottom: 0.5em; }
 
@@ -147,7 +177,7 @@
   </tr></tbody></table>
 
   <!-- ======== 简介 ======== -->
-  <h2 style="margin-top:-10px;">Biography / 简介</h2>
+  <h2 style="margin-top:-10px;">📌 Biography / 简介</h2>
   <p>
     Hi! I am <strong>Junrui Xu (Chinese name: 徐俊瑞)</strong>, currently a first-year <u>Master's student</u> at the
     <a href="https://www.nsrl.ustc.edu.cn/" target="_blank">National Synchrotron Radiation Laboratory (NSRL)</a>,
@@ -168,9 +198,9 @@
   </p>
 
   <!-- ======== 项目 ======== -->
-  <h2 id="projects">Recent Work / 近期工作</h2>
+  <h2 id="projects">🛠️ Recent Work / 近期工作</h2>
 
-  <h3><a href="https://github.com/AI4MS/MatCreator" target="_blank">MatCreator — 材料计算智能体</a></h3>
+  <h3 class="work-title"><a href="https://github.com/AI4MS/MatCreator" target="_blank">MatCreator — 材料计算智能体</a></h3>
   <p>
     <strong>Core developer.</strong> A materials-computing agent that orchestrates computational-materials workflows
     (structure generation, property calculation, result analysis) through an agent loop.
@@ -182,7 +212,7 @@
     我主要负责 Skill（闭源）优化与循环设计，并参与与深势科技合作的多量子体系计算相关项目。
   </p>
 
-  <h3><a href="https://github.com/theAfish/open-agent-world" target="_blank">Open Agent World — 画布式多智能体协作平台</a></h3>
+  <h3 class="work-title"><a href="https://github.com/theAfish/open-agent-world" target="_blank">Open Agent World — 画布式多智能体协作平台</a></h3>
   <p>
     <strong>Contributor (experimental).</strong> An experimental canvas-style platform where multiple agents collaborate visually.
     I built the knowledge-base module, enabling ingestion and retrieval of non-standardized data.
@@ -192,7 +222,7 @@
     我负责知识库构建，实现非标准化数据的入库与查询。
   </p>
 
-  <h3><a href="https://github.com/Mikexujunrui/AnySpark" target="_blank">AnySpark — AI 小说创作智能体</a></h3>
+  <h3 class="work-title"><a href="https://github.com/Mikexujunrui/AnySpark" target="_blank">AnySpark — AI 小说创作智能体</a></h3>
   <p>
     <strong>Independent developer (full stack).</strong> A personal project exploring human-AI alignment for creative writing:
     mental-model alignment to capture the user's intent, a gacha mechanism to improve passage quality,
@@ -204,25 +234,32 @@
   </p>
 
   <!-- ======== 博客 ======== -->
-  <h2 id="blog">Blog / 博客</h2>
-  <p style="margin-bottom:0.4em">
+  <h2 id="blog">✍️ Blog / 博客</h2>
+  <div class="blog-card">
+    <p>
     <strong>[11/2026]</strong> <a href="blog/2026-11-23-never-surrender.html">至死方休：在最好的时代，面对最坏的可能</a> ——
     技术正在创造新的可能，也在制造新的不确定性；我可以失败，但拒绝在结果出现之前提前认输。（约 5 分钟）
-  </p>
-  <p>
+    </p>
+  </div>
+  <div class="blog-card">
+    <p>
     <strong>[11/2026]</strong> <a href="blog/2026-11-21-ai-path-to-godhood.html">AI的成神之路：科学建制是如何被杀死的</a> ——
     天敌决定种群数量，同态竞争决定生态位归属；AI 不是科学方法的天敌，而是"科学建制"这个同态竞争者的同态竞争者。（约 10 分钟）
-  </p>
-  <p>
+    </p>
+  </div>
+  <div class="blog-card">
+    <p>
     <strong>[11/2026]</strong> <a href="blog/2026-11-21-hello.html">你好，世界：为什么我给自己搭了一个个人主页</a> ——
     关于本站的初衷：记录 Agent 实践、AI for Science 折腾与日常思考。
-  </p>
+    </p>
+  </div>
 
   <!-- ======== 动态 ======== -->
-  <h2 id="news">News / 动态</h2>
+  <h2 id="news">📰 News / 动态</h2>
+  <div class="panel">
   <p><strong>[11/2026]</strong> 新文章：<a href="blog/2026-11-23-never-surrender.html">《至死方休》</a>，写下面对这个时代的态度。</p>
   <p><strong>[11/2026]</strong> 个人主页上线 🎉，博客开始记录 Agent 与 AI for Science 的思考。</p>
-  <p><strong>[09/2026]</strong> 入读中国科学技术大学国家同步辐射实验室，开始硕士阶段学习与研究。</p>
+  <p style="margin-bottom:0.6em"><strong>[09/2026]</strong> 入读中国科学技术大学国家同步辐射实验室，开始硕士阶段学习与研究。</p>
   <div style="height:250px;overflow:auto;font-size:small;">
     <ul>
       <li><strong>[08/2026]</strong> 结束在中国科学技术大学人工智能与数据科学学院 / 苏州国家实验室的科研助理工作。</li>
@@ -232,9 +269,10 @@
     </ul>
   </div>
   <div class="scroll-hint">⬆ scrollable</div>
+  </div>
 
   <!-- ======== 教育 ======== -->
-  <h2 id="education">Education / 教育</h2>
+  <h2 id="education">🎓 Education / 教育</h2>
   <table class="rows"><tbody>
     <tr>
       <td width="200">
@@ -264,7 +302,7 @@
   </tbody></table>
 
   <!-- ======== 经历 ======== -->
-  <h2 id="experience">Experience / 科研与实习</h2>
+  <h2 id="experience">💼 Experience / 科研与实习</h2>
   <table class="rows"><tbody>
     <tr>
       <td width="200">
@@ -301,7 +339,7 @@
   </tbody></table>
 
   <!-- ======== 荣誉 ======== -->
-  <h2 id="honors">Honors &amp; Awards / 荣誉与奖项</h2>
+  <h2 id="honors">🏆 Honors &amp; Awards / 荣誉与奖项</h2>
   <ul>
     <li>全国大学生物理学术能力竞赛 一等奖（2 次）</li>
     <li>第 37 届全国中学生物理学术能力竞赛 赛区一等奖</li>
